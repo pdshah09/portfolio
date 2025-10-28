@@ -1,6 +1,6 @@
 # 🌐 Project Overview
 
-This repository hosts my **personal portfolio**, built in two distinct versions:
+This repository hosts my **personal portfolio**:
 
 - 🌇 **[`index.html`](https://pdshah09.github.io/portfolio/)** – Modern, Material Design-inspired UI with animations, dark mode toggle, and interactive elements.
 
