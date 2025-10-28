@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/portfolio.png">
+
+    <link rel="stylesheet" href="index.css" id="main-stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <header class="top-app-bar">
+        <a href="#home" class="logo" aria-label="Go to homepage">
+            <img src="assets/logo.gif" alt="Tremors Animated Logo">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="#home" class="nav-item active">Home</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#portfolio" class="nav-item">Work</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+
+        <div class="app-bar-actions">
+            <div class="icon-button-wrapper">
+                <a href="assets/Param_Shah_Resume.pdf" download="Param_Shah_Resume.pdf" class="icon-button" title="Download Resume" aria-label="Download my resume">
+                    <img src="assets/cv.svg" alt="CV Icon" width="25" height="25">
+                    <span class="icon-label">Resume</span>
+                </a>
+            </div>
+
+            <div class="icon-button-wrapper">
+                <a href="https://play.google.com/store/apps/developer?id=SkiaTech" class="icon-button" title="Apps" aria-label="Go To Nexus" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/app.png" alt="Apps" width="25" height="25">
+                    <span class="icon-label">Apps</span>
+                </a>
+            </div>
+
+            <div class="icon-button-wrapper">
+                <button id="theme-toggle" class="theme-toggle-button" title="Toggle theme" aria-label="Toggle color theme">
+                    <img src="assets/moon.svg" alt="Moon Icon for dark mode" class="moon" width="25" height="25">
+                    <img src="assets/sun.svg" alt="Sun Icon for light mode" class="sun" width="25" height="25">
+                    <span class="icon-label">Theme</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- <div class="app-bar-actions">
+            <a href="assets/Param_Shah_Resume.pdf" download="Aman_Singh.pdf" class="icon-button" title="Download Resume" aria-label="Download my resume">
+                <img src="assets/cv.svg" alt="CV Icon" width="25" height="25">
+            </a>
+
+            <a href="https://play.google.com/store/apps/developer?id=SkiaTech" class="icon-button" title="Apps" aria-label="Go To Nexus" target="_blank" rel="noopener noreferrer">
+                <img src="assets/app.png" alt="Apps" width="25" height="25">
+            </a>
+
+            <div class="dropdown-container">
+                <button id="dropdown-toggle" class="icon-button" title="More Options" aria-label="Toggle more options dropdown">
+                    <img src="assets/alien.svg" alt="More Options Icon">
+                </button>
+
+                <div class="dropdown-card" id="main-dropdown">
+                    <button class="dropdown-item" title="A minimal lightweight TUI version of this page" onclick="location.href='indextui.html'">
+                        <img src="assets/alien.svg" class="dropdown-icon" alt="TUI Icon">
+                        <span class="dropdown-title">TUI Version</span>
+                    </button>
+                    
+                    <hr class="menu-separator">
+
+                    <button class="dropdown-item theme-option" title="Toggle Alternate (MD3) Theme">
+                        <img src="assets/MD3.svg" class="dropdown-icon" alt="MD3 Icon">
+                        <span class="dropdown-title">Material Design 3</span>
+                    </button>
+                </div>
+            </div>
+
+            <button id="theme-toggle" class="theme-toggle-button" title="Toggle theme" aria-label="Toggle color theme">
+                <img src="assets/moon.svg" alt="Moon Icon for dark mode" class="moon" width="25" height="25">
+                <img src="assets/sun.svg" alt="Sun Icon for light mode" class="sun" width="25" height="25">
+            </button>
+        </div> -->
+
+    </header>
+
+    <nav class="navigation-bar">
+        <a href="#home" class="nav-item active" aria-label="Go to Home section">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/></svg></span>
+            <span class="label">Home</span>
+        </a>
+        <a href="#about" class="nav-item" aria-label="Go to About section">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></span>
+            <span class="label">About</span>
+        </a>
+        <a href="#skills" class="nav-item" aria-label="Go to Skills section">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></span>
+            <span class="label">Skills</span>
+        </a>
+        <a href="#portfolio" class="nav-item" aria-label="Go to Work section">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg></span>
+            <span class="label">Work</span>
+        </a>
+        <a href="#contact" class="nav-item" aria-label="Go to Contact section">
+            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></span>
+            <span class="label">Contact</span>
+        </a>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="profile-img-wrapper">
+                    <img src="assets/pd.png" alt="Profile Photo of Aman" loading="lazy">
+                </div>
+                <h1>Hi, I'm Param Shah</h1>
+                <p>A junior Flutter developer with a passion for transforming ideas into beautiful, high-performance, cross-platform mobile applications. I focus on creating a seamless user experience through clean code and intuitive design.</p>
+                <a href="#portfolio" class="extended-fab">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a Computer Science Engineering graduate specializing in cross-platform app development using Flutter and Kotlin Multiplatform (KMP). My professional experience includes a 3-month internship as a Junior Developer, where I contributed to real-world web and mobile projects and strengthened my problem-solving and debugging skills.</p>
+
+                        <p>I build apps with a strong focus on clean architecture, performance, and intuitive UI/UX, ensuring scalability and maintainability across Android, iOS, and desktop platforms. My approach to development emphasizes clean, reusable code and adherence to industry best practices.</p>
+
+                        <p>While my current focus is on advancing as a Flutter and KMP developer, I am also exploring AI/ML integration in mobile systems to expand my technical depth. I’m eager to contribute to a forward-thinking team that values innovation, quality, and cross-platform excellence.</p>
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>App Development 📱</h3>
+                <ul>
+                <li><div class="badge-wrapper" style="--fill:0.9; --bar-color:#02569B;" title="Proficiency: 90%">
+                    <img src="https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white" alt="Flutter Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.85; --bar-color:#0175C2;" title="Proficiency: 85%">
+                    <img src="https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white" alt="Dart Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.8; --bar-color:#7F52FF;" title="Proficiency: 80%">
+                    <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white" alt="Kotlin Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.75; --bar-color:#4285F4;" title="Proficiency: 75%">
+                    <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=flat&logo=android&logoColor=white" alt="Jetpack Compose Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.7; --bar-color:#DD2C00;" title="Proficiency: 70%">
+                    <img src="https://img.shields.io/badge/Kotlin%20Multiplatform-7F52FF?style=flat&logo=kotlin&logoColor=white" alt="KMP Badge"></div></li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Backend & Databases ⚙️</h3>
+                <ul>
+                <li><div class="badge-wrapper" style="--fill:0.8; --bar-color:#3776AB;" title="Proficiency: 80%">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.75; --bar-color:#44B78B;" title="Proficiency: 75%">
+                    <img src="https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white" alt="Django Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.6; --bar-color:#009688;" title="Proficiency: 60%">
+                    <img src="https://img.shields.io/badge/Supabase-3FCF8E?style=flat&logo=supabase&logoColor=white" alt="Supabase Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.55; --bar-color:#336791;" title="Proficiency: 55%">
+                    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white" alt="PostgreSQL Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.6; --bar-color:#E38C00;" title="Proficiency: 60%">
+                    <img src="https://img.shields.io/badge/SQLDelight-E38C00?style=flat&logo=kotlin&logoColor=white" alt="SQLDelight Badge"></div></li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>UI/UX & Tools 🛠️</h3>
+                <ul>
+                <li><div class="badge-wrapper" style="--fill:0.8; --bar-color:#FF4081;" title="Proficiency: 80%">
+                    <img src="https://img.shields.io/badge/Material%20Design-FF4081?style=flat&logo=materialdesign&logoColor=white" alt="Material Design Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.9; --bar-color:#F05032;" title="Proficiency: 90%">
+                    <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white" alt="Git Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.9; --bar-color:#007ACC;" title="Proficiency: 90%">
+                    <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visualstudiocode&logoColor=white" alt="VS Code Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.7; --bar-color:#3DDC84;" title="Proficiency: 70%">
+                    <img src="https://img.shields.io/badge/Android%20Studio-3DDC84?style=flat&logo=androidstudio&logoColor=white" alt="Android Studio Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.6; --bar-color:#000000;" title="Proficiency: 60%">
+                    <!-- <img src="https://img.shields.io/badge/Xcode-000000?style=flat&logo=xcode&logoColor=white" alt="Xcode Badge"></div></li> -->
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>Exploring & Interests 🌱</h3>
+                <ul>
+                <li><div class="badge-wrapper" style="--fill:0.5; --bar-color:#FF6F00;" title="Learning">
+                    <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white" alt="TensorFlow Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.4; --bar-color:#F7931E;" title="Learning">
+                    <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikitlearn&logoColor=white" alt="scikit-learn Badge"></div></li>
+                <li><div class="badge-wrapper" style="--fill:0.5; --bar-color:#4285F4;" title="Exploring AI/ML Integration">
+                    <img src="https://img.shields.io/badge/AI%20Integration-4285F4?style=flat&logo=google&logoColor=white" alt="AI Badge"></div></li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2>My Portfolio</h2>
+                <div class="portfolio-grid">
+                    
+                    <article class="portfolio-item">
+                        <a href="https://play.google.com/store/apps/details?id=com.notesto.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                            <img src="assets/notes.png" alt="notes" loading="lazy">
+                            <div class="portfolio-content">
+                            <h3>Notes</h3>
+                            <p>A clean, fast Flutter app for simple notes and to-dos. Create, edit, and delete timestamped notes, manage to-do lists with check/uncheck and swipe-to-delete, and multi-select for quick cleanup. Works fully offline with local data storage via Hive.</p>
+                            <div class="tech-badges">
+                                <span class="tech-numpy">Flutter</span>
+                                <span class="tech-tsparticles">Dart</span>
+                                <span class="tech-pillow">Hive</span>
+                                <span class="tech-tensorflow">google_fonts</span>
+                                <span class="tech-plotly">url_launcher</span>
+                                <span class="tech-sql">package_info_plus</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <span class="link-primary">View on Play Store &rarr;</span>
+                            </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    
+                    <article class="portfolio-item">
+                        <a href="https://play.google.com/store/apps/details?id=org.litrate.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                            <img src="assets/litrate.png" alt="litrate" loading="lazy">
+                            <div class="portfolio-content">
+                                 <h3>LitRate</h3>
+                                 <p>A sleek cross-platform book discovery app built with Compose Multiplatform. Browse titles, view ratings and details, and enjoy a smooth unified experience across Android, iOS, and desktop using shared Kotlin logic with MVVM and SQLDelight.</p>
+                                <div class="tech-badges">
+                                    <span class="tech-kotlin">Kotlin</span>
+                                    <span class="tech-compose">Jetpack Compose</span>
+                                    <span class="tech-material3">Material3</span>
+                                    <span class="tech-viewmodel">ViewModel + StateFlow</span>
+                                    <span class="tech-ktor">Ktor Client</span>
+                                    <span class="tech-json">Gson / kotlinx.serialization</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="https://play.google.com/store/apps/details?id=org.litrate.app" target="_blank" rel="noopener noreferrer" class="link-primary">View on Play Store &rarr;</a>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="portfolio-item">
+                        <a href="https://play.google.com/store/apps/details?id=com.pack.glidrbeta" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                            <img src="assets/glidr.png" alt="glidr" loading="lazy">
+                            <div class="portfolio-content">
+                                <h3>Glidr Beta</h3>
+                                <p>A modern Android gallery app built with Jetpack Compose. Zoom, swipe, and explore your media with beautiful layouts like vertical, horizontal, and staggered grid. Includes an intuitive image viewer with file info and smooth navigation.</p>
+                                <div class="tech-badges">
+                                    <span class="tech-compose">Jetpack Compose (UI)</span>
+                                    <span class="tech-kotlin">Kotlin (Android)</span>
+                                    <span class="tech-stateflow">StateFlow & ViewModel (architecture)</span>
+                                    <span class="tech-coil">Coil 3 (image loading)</span>
+                                    <span class="tech-navigation">Navigation Component (screen transitions)</span>
+                                </div>
+                                <div class="portfolio-links">
+                                    <a href="https://play.google.com/store/apps/details?id=com.pack.glidrbeta" class="link-primary">View on Play Store &rarr;</a>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="portfolio-item">
+                        <img src="assets/mkmp.png" alt="MKMP E-commerce System Preview" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>MKMP (E-Commerce)</h3>
+                            <p>
+                                A medium-scale e-commerce system, contributed in it's development during my internship at <strong><a href="https://www.amrisystems.com/">Amri Systems</a></strong>.
+                                Built with <strong>Django</strong> and optimized for performance, it includes advanced cart logic,
+                                exchange functionality, and real-time updates for both guest and authenticated users.
+                            </p>
+                            <div class="tech-badges">
+                                <span class="tech-python">Python</span>
+                                <span class="tech-django">Django</span>
+                                <span class="tech-html">HTML</span>
+                                <span class="tech-css">CSS</span>
+                                <span class="tech-js">JavaScript</span>
+                                <span class="tech-sql">MySQL</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://www.merakaammeripehchaan.com/" target="_blank" rel="noopener noreferrer" class="link-primary">View Live &rarr;</a>
+                                <!-- <a href="https://github.com/pdshah09/mkmp" target="_blank" rel="noopener noreferrer" class="link-secondary">View on GitHub &rarr;</a> -->
+                            </div>
+                        </div>
+                    </article>
+
+                    
+
+                    
+                    <!-- <article class="portfolio-item">
+                        <img src="assets/calculator-preview.jpg" alt="Calculator App Project Preview" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>Calculator App (PYgame)</h3>
+                            <p>A fully functional calculator implemented as a single Python script using Pygame with a responsive GUI and persistent history.</p>
+                            <div class="tech-badges">
+                                <span class="tech-python">Python</span>
+                                <span class="tech-pygame">Pygame</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://github.com/qtremors/pygame-calculator-app" target="_blank" rel="noopener noreferrer" class="link-secondary">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </article> -->
+                    
+                    <article class="portfolio-item">
+                        <a href="https://play.google.com/store/apps/details?id=com.yvbcatalog.app" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                        <img src="assets/yvb.png" alt="YVB Catalog" loading="lazy">
+                        <div class="portfolio-content">
+                            <h3>YVB Catalog</h3>
+                            <p>A client project built for Yogeshwar Vasan Bhandar, a kitchenware retail brand. Developed using Flutter, the app offers a fast, modern, and completely offline catalog browsing experience. Users can view products, add items to a wishlist, and navigate through categories — all stored locally with no login or internet dependency.</p>
+                            <div class="tech-badges">
+                                <span class="tech-numpy">Flutter</span>
+                                <span class="tech-tsparticles">Dart</span>
+                                <span class="tech-kotlin">Riverpod</span>
+                                <span class="tech-compose">Hive</span>
+                                <span class="tech-plotly">url_launcher</span>
+                                <span class="tech-material3">Material 3</span>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.yvbcatalog.app" target="_blank" rel="noopener noreferrer" class="link-primary">View on Play Store &rarr;</a>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                    
+                    <article class="portfolio-item portfolio-item-more">
+                        <a href="https://github.com/pdshah09/TodoNest"  target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                        <div class="portfolio-image-container">
+                            <img src="assets/todonest.png" alt="More Projects on GitHub" loading="lazy">
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Explore More Projects</h3>
+                            <p>See the rest of my experiments and contributions on my GitHub profile.</p>
+                            <a href="https://github.com/pdshah09/TodoNest" target="_blank" rel="noopener noreferrer" class="cta-link">Visit GitHub &rarr;</a>
+                        </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p class="contact-intro">I'm currently looking for new opportunities. My inbox is always open, whether you have a question or just want to say hi.</p>
+                <div class="social-links">
+                    <a href="https://github.com/pdshah09" class="icon-button" title="GitHub" aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.046.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.197-6.091 8.197-11.387C24 5.373 12 0 12 0Z"/></svg>
+                    </a>
+
+                    <a href="mailto:paramshah2905@gmail.com" class="icon-button" title="Email" aria-label="Send me an email">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/param-shah-77bb30282/" class="icon-button" title="LinkedIn" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Param Shah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="index.js" defer></script>
+
+</body>
+</html>
+
