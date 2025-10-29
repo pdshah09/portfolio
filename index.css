@@ -527,7 +527,9 @@ body:not([data-theme='light']) .dropdown-item:hover {
 .profile-img-wrapper:hover img { border-color: transparent; }
 .hero h1 { font-size: 2.75rem; color: var(--md-primary); margin-bottom: 1rem; }
 .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; color: var(--md-on-surface-variant); }
-.hero .extended-fab { margin-right: 1rem; display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1.5rem; border-radius: 1.5rem; background-color: var(--md-primary); color: var(--md-on-primary); font-weight: 500; text-decoration: none; box-shadow: 0 4px 8px var(--md-shadow-color); transition: transform 0.2s, box-shadow 0.2s; }
+
+
+.hero .extended-fab { margin: 1rem; display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.9rem 1.5rem; border-radius: 1.5rem; background-color: var(--md-primary); color: var(--md-on-primary); font-weight: 500; text-decoration: none; box-shadow: 0 4px 8px var(--md-shadow-color); transition: transform 0.2s, box-shadow 0.2s; }
 .hero .extended-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 12px var(--md-shadow-color); }
 
 /* --- About Section --- */
@@ -784,6 +786,15 @@ footer {
     .navigation-bar { bottom: 1rem; padding: 0.5rem; }
     .navigation-bar .nav-item { min-width: unset; padding: 0.25rem 0.5rem; }
     .navigation-bar .nav-item .label { font-size: 0.7rem; }
+}
+
+@media (max-width: 480px) {
+    .hero .extended-fab {
+        display: flex;
+        
+        justify-content: center;
+        margin: 1rem; /* Stack vertically with gap */
+    }
 }
 
 @media (min-width: 769px) {
