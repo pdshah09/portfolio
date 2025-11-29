@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
             applyTheme(savedTheme);
         } else if (systemPrefersDark) {
             // 2. No saved preference, but system prefers dark, so respect it.
-            applyTheme('light');
+            applyTheme('dark');
         } else {
             // 3. Neither a saved preference nor a dark system preference, so default to DARK.
-            applyTheme('light');
+            applyTheme('dark');
         }
     };
 

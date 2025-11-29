@@ -188,23 +188,7 @@ body:not([data-theme='light']) .top-app-bar {
     object-fit: cover;
 }
 
-/* --- App Bar Buttons --- */
-.icon-button,
-.theme-toggle-button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: none;
-    background-color: transparent;
-    color: var(--md-on-surface-variant);
-    cursor: pointer;
-    transition: background-color 0.2s;
-    padding: 0;
-}
+
 
 /* ==========================================================================
    Icon Button Labels - Always Visible
@@ -325,8 +309,8 @@ body:not([data-theme="light"]) { --theme-icon-shadow: #ffffff; }
 
 
 /* --- Theme Toggle --- */
-body:not([data-theme='dark']) .theme-toggle-button .sun { display: none; }
-body[data-theme='dark'] .theme-toggle-button .moon { display: none; }
+body:not([data-theme='light']) .theme-toggle-button .sun { display: none; }
+body[data-theme='light'] .theme-toggle-button .moon { display: none; }
 
 
 /* ==========================================================================
