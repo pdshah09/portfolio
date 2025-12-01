@@ -281,6 +281,11 @@ body:not([data-theme='light']) .theme-toggle-button:hover {
     width: 25px;
     height: 25px;
 }
+.company-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: white;
+}
 
 /* --- App Bar Icon Animations --- */
 
