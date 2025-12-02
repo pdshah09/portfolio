@@ -10,6 +10,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background-image: url("../assets/banner1.png");
+    background-size: cover; 
+
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #home .container {
@@ -80,7 +87,8 @@
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 2.5rem;
-    color: var(--md-on-surface-variant);
+    /* color: var(--md-on-surface-variant); */
+    color: #FFFFFF;
 }
 
 .hero .extended-fab {
