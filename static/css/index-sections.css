@@ -115,6 +115,7 @@
 }
 
 .hero .extended-fab {
+    margin: 0.65rem;
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
