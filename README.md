@@ -12,7 +12,7 @@ The TUI version is completely **JavaScript-free**, while the modern version uses
 ## 📸 Screenshots
 
 ### 🌇 Material UI [▶](https://pdshah09.github.io/portfolio/) 
-![Modern UI Screenshot](assets/index_ss.png)
+![Modern UI Screenshot](https://github.com/pdshah09/portfolio/blob/main/assets/index.png)
 
 ---
 

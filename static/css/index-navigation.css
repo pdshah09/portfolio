@@ -1,0 +1,465 @@
+/* ==========================================================================
+   1. TOP APP BAR (Sticky Header)
+   ========================================================================== */
+.top-app-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.top-app-bar.hidden {
+    transform: translateY(-150%);
+    opacity: 0;
+}
+
+.app-bar-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.top-app-bar .logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+
+/* Buttons */
+.icon-button,
+.theme-toggle-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: auto;
+    height: 35px;
+    border-radius: 999px;
+    border: none;
+    background-color: transparent;
+    color: var(--md-on-surface-variant);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    padding: 0 0.75rem;
+    text-decoration: none;
+}
+
+.icon-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--md-on-surface);
+    white-space: nowrap;
+}
+
+.icon-button img,
+.theme-toggle-button img {
+    width: 25px;
+    height: 25px;
+}
+
+/* ==========================================================================
+   2. DROPDOWN MENU
+   ========================================================================== */
+.dropdown-container {
+    position: relative;
+}
+
+/* Gradient Ring Animation */
+#dropdown-toggle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 2px;
+    background: conic-gradient(from -60deg, #EA4335 0% 26%, #4285F4 26% 58%, #34A853 58% 84%, #FBBC05 84% 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.3s ease-in-out;
+}
+
+#dropdown-toggle:hover::before {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+#dropdown-toggle img {
+    position: relative;
+    z-index: 1;
+}
+
+/* Dropdown Card */
+.dropdown-card {
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 1001;
+    width: max-content;
+    background-color: var(--md-surface);
+    border-radius: 12px;
+    border: 1px solid var(--md-outline);
+    box-shadow: 0 4px 12px var(--md-shadow-color);
+    padding: 0.5rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, visibility 0.2s, transform 0.2s ease;
+}
+
+.dropdown-container:focus-within .dropdown-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--md-on-surface);
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body:not([data-theme='light']) .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-separator {
+    border: none;
+    height: 1px;
+    background-color: #555560;
+    margin: 4px 0;
+}
+
+.dropdown-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--md-on-surface-variant);
+}
+
+.dropdown-title {
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   3. SETTINGS MODAL
+   ========================================================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-card {
+    background-color: var(--md-surface);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 24px;
+    border: 1px solid var(--md-outline);
+    box-shadow: 0 10px 40px var(--md-shadow-color);
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.modal-backdrop.open .modal-card {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--md-outline);
+    background: var(--md-surface-variant);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.setting-label {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--md-on-surface-variant);
+    margin-bottom: 0.75rem;
+}
+
+/* Controls (Segmented & Grid) */
+.segmented-control {
+    display: flex;
+    background-color: var(--md-surface-variant);
+    padding: 4px;
+    border-radius: 12px;
+    gap: 4px;
+}
+
+.segment-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    color: var(--md-on-surface-variant);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.segment-btn:hover {
+    color: var(--md-on-surface);
+}
+
+.segment-btn.active {
+    background-color: var(--md-surface);
+    color: var(--md-primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+.theme-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.theme-card {
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.theme-card:hover {
+    background-color: var(--md-surface-variant);
+}
+
+.theme-card.active {
+    background-color: var(--md-surface-variant);
+    border-color: var(--md-primary);
+}
+
+.theme-card span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--md-on-surface);
+}
+
+.theme-preview {
+    height: 40px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 4px;
+    border: 1px solid var(--md-outline);
+}
+
+.default-preview {
+    background: linear-gradient(135deg, #8ab4f8, #1967d2);
+}
+
+.md3-preview {
+    background: linear-gradient(135deg, #e9b3ff, #4f2667);
+}
+
+.oled-preview {
+    background: linear-gradient(135deg, #ffffff, #000000);
+}
+
+/* ==========================================================================
+   4. DESKTOP & MOBILE NAVIGATION (Responsive Switcher)
+   ========================================================================== */
+
+/* A. Mobile Bottom Bar (Default) */
+.navigation-bar {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--md-surface-variant);
+    padding: 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--md-outline);
+    box-shadow: 0 4px 12px var(--md-shadow-color);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.navigation-bar.hidden {
+    transform: translateX(-50%) translateY(200%);
+    opacity: 0;
+}
+
+.navigation-bar .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--md-on-surface-variant);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    min-width: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation-bar .nav-item .icon {
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-bar .nav-item .label {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.navigation-bar .nav-item.active {
+    color: var(--md-primary);
+}
+
+/* B. Desktop Top Bar (Default Hidden) */
+.desktop-nav {
+    display: none;
+}
+
+.desktop-nav .nav-item {
+    text-decoration: none;
+    color: var(--md-on-surface-variant);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+}
+
+.desktop-nav .nav-item:hover {
+    color: var(--md-on-surface);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body:not([data-theme='light']) .desktop-nav .nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-nav .nav-item.active {
+    color: var(--md-primary);
+}
+
+.desktop-nav .nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    border-radius: 1px;
+    background-color: var(--md-primary);
+}
+
+/* C. Responsive Switching Logic */
+/* We use !important on Display properties to ensure this logic wins regardless of file load order */
+
+@media (max-width: 768px) {
+    .navigation-bar {
+        display: flex !important;
+        bottom: 1rem;
+        padding: 0.5rem;
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .navigation-bar {
+        display: none !important;
+    }
+
+    .desktop-nav {
+        display: flex !important;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}

@@ -1,0 +1,136 @@
+/* =========================================
+   THEME: MATERIAL DESIGN 3 (Expressive)
+   ========================================= */
+
+:root {
+    /* --- MD3 Primitive Colors (Dark) --- */
+    --md-sys-color-primary: #e9b3ff;
+    --md-sys-color-on-primary: #4f2667;
+    --md-sys-color-primary-container: #683d7f;
+    --md-sys-color-on-primary-container: #ffd6ff;
+    --md-sys-color-secondary: #d3bee3;
+    --md-sys-color-on-secondary: #392b40;
+    --md-sys-color-secondary-container: #504157;
+    --md-sys-color-on-secondary-container: #efdafa;
+    --md-sys-color-surface: #161218;
+    --md-sys-color-on-surface: #e9e0ea;
+    --md-sys-color-surface-variant: #4b4450;
+    --md-sys-color-on-surface-variant: #cfc3d2;
+    --md-sys-color-outline: #978e9b;
+    --md-sys-color-background: #161218;
+    --md-sys-color-surface-container: #231e26;
+    --md-sys-color-surface-container-low: #1e1a20;
+
+    /* --- MAP to Global Variables --- */
+    --md-primary: var(--md-sys-color-primary);
+    --md-on-primary: var(--md-sys-color-on-primary);
+    --md-primary-container: var(--md-sys-color-primary-container);
+    --md-on-primary-container: var(--md-sys-color-on-primary-container);
+    --md-secondary: var(--md-sys-color-secondary);
+    --md-on-secondary: var(--md-sys-color-on-secondary);
+    --md-background: var(--md-sys-color-background);
+    --md-surface: var(--md-sys-color-surface-container-low);
+    --md-surface-variant: var(--md-sys-color-surface-container);
+    --md-on-surface: var(--md-sys-color-on-surface);
+    --md-on-surface-variant: var(--md-sys-color-on-surface-variant);
+    --md-outline: var(--md-sys-color-outline);
+    --md-shadow-color: rgba(0, 0, 0, 0.5);
+    
+    --md-sys-font-family: 'Manrope', sans-serif;
+    --theme-icon-shadow: #ffffff;
+    --hero-grid-color: rgba(233, 179, 255, 0.08);
+    --spotlight-color: rgba(233, 179, 255, 0.1);
+}
+
+body[data-theme='light'] {
+    /* --- MD3 Primitive Colors (Light) --- */
+    --md-sys-color-primary: #825599;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #ffd6ff;
+    --md-sys-color-on-primary-container: #34114d;
+    --md-sys-color-secondary: #68586f;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #efdafa;
+    --md-sys-color-on-secondary-container: #23162a;
+    --md-sys-color-background: #fff7ff;
+    --md-sys-color-surface: #fff7ff;
+    --md-sys-color-on-surface: #1e1a20;
+    --md-sys-color-surface-variant: #eadeed;
+    --md-sys-color-on-surface-variant: #4b4450;
+    --md-sys-color-outline: #7d7481;
+    --md-sys-color-surface-container: #f5ecf6;
+    --md-sys-color-surface-container-low: #fbf2fc;
+    --md-sys-color-surface-container-lowest: #ffffff;
+
+    /* --- MAP to Global Variables (Light) --- */
+    --md-primary: var(--md-sys-color-primary);
+    --md-on-primary: var(--md-sys-color-on-primary);
+    --md-primary-container: var(--md-sys-color-primary-container);
+    --md-on-primary-container: var(--md-sys-color-on-primary-container);
+    --md-secondary: var(--md-sys-color-secondary);
+    --md-on-secondary: var(--md-sys-color-on-secondary);
+    --md-background: var(--md-sys-color-background);
+    --md-surface: var(--md-sys-color-surface-container-lowest);
+    --md-surface-variant: var(--md-sys-color-surface-container);
+    --md-on-surface: var(--md-sys-color-on-surface);
+    --md-on-surface-variant: var(--md-sys-color-on-surface-variant);
+    --md-outline: var(--md-sys-color-outline);
+    --md-shadow-color: rgba(0, 0, 0, 0.2);
+    --theme-icon-shadow: #202124;
+
+    --hero-grid-color: rgba(130, 85, 153, 0.08);
+    --spotlight-color: rgba(130, 85, 153, 0.20);
+}
+
+/* =========================================
+   MD3 STRUCTURAL OVERRIDES
+   ========================================= */
+
+body {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* --- Shape Engine (Squircles) --- */
+.extended-fab,
+.portfolio-links a,
+.cta-link,
+.skill-card,
+.portfolio-item {
+    border-radius: 16px !important;
+}
+
+.navigation-bar {
+    border-radius: 28px !important;
+}
+
+.navigation-bar .nav-item .icon {
+    border-radius: 16px !important;
+}
+
+.tech-badges span {
+    border-radius: 8px !important;
+}
+
+.desktop-nav .nav-item {
+    border-radius: 12px !important;
+}
+
+/* --- Component Tweaks --- */
+.top-app-bar,
+body:not([data-theme='light']) .top-app-bar {
+    background-color: var(--md-sys-color-surface-container) !important;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant) !important;
+}
+
+/* Mobile Nav Active Colors */
+.navigation-bar .nav-item.active .icon {
+    background-color: var(--md-sys-color-secondary-container) !important;
+    color: var(--md-sys-color-on-secondary-container) !important;
+}
+
+/* --- Neon Gradients --- */
+.top-app-bar .logo::before,
+#dropdown-toggle::before,
+.profile-img-wrapper::before {
+    background: conic-gradient(#ff79c6, #bd93f9, #8be9fd, #50fa7b, #ffb86c, #f1fa8c, #ff79c6) !important;
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "yvb",
+    "title": "YVB Catalog",
+    "image": "https://play-lh.googleusercontent.com/358sYXSOZr_FkzZVmK_QZf3m8OLiQw9BDS7YEHFPnnvj1PIlzplMP3FxxVc1kPnME9Ql4me0Xrn76C0nBbjkAg=w416-h235-rw",
+    "description": "A client project built for Yogeshwar Vasan Bhandar, a kitchenware retail brand. Developed using Flutter, the app offers a fast, modern, and completely offline catalog browsing experience. Users can view products, add items to a wishlist, and navigate through categories — all stored locally with no login or internet dependency.",
+    "badges": ["tech-flutter", "tech-dart", "tech-riverpod", "tech-hive", "tech-material3"],
+    "mainlink": "https://play.google.com/store/apps/details?id=com.yvbcatalog.app",
+    "links": [
+      {
+        "text": "View on Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.yvbcatalog.app",
+        "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "litrate",
+    "title": "LitRate",
+    "image": "https://play-lh.googleusercontent.com/_zl2SHhqVWFkEXZ6rorDVwWCKB3QMuvExFdnskMI8uLuX_93GROn46f-3B9ZQHKCGCQO2V0fExAuGVTG67kctA=w416-h235-rw",
+    "description": "A sleek cross-platform book discovery app built with Compose Multiplatform. Browse titles, view ratings and details, and enjoy a smooth unified experience across Android, iOS, and desktop using shared Kotlin logic with MVVM and RESTful API.",
+    "badges": [
+      "tech-kotlin",
+      "tech-compose",
+      "tech-material3",
+      "tech-viewmodel",
+      "tech-ktor",
+      "tech-json"],
+    "mainlink": "https://play.google.com/store/apps/details?id=org.litrate.app",
+    "links": [
+      {
+        "text": "View on Play Store",
+        "url": "https://play.google.com/store/apps/details?id=org.litrate.app",
+        "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "notes",
+    "title": "Notes",
+    "image": "https://play-lh.googleusercontent.com/eklSh4I4KF1YvCunLwtR1a1x34DkWjl8rONkFxyu37hMmiDiH6h7HcajhfTIPfuJ75m5kShi9mKy6yRAqIWH=w416-h235-rw",
+    "description": "A clean, fast Flutter app for simple notes and to-dos. Create, edit, and delete timestamped notes, manage to-do lists with check/uncheck and swipe-to-delete, and multi-select for quick cleanup. Works fully offline with local data storage via Hive.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-hive",
+      "tech-url_launcher",
+      "tech-fonts"
+    ],
+    "mainlink": "https://play.google.com/store/apps/details?id=com.notesto.app",
+    "links": [
+      { 
+        "text": "View on Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.notesto.app",
+        "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "glidr",
+    "title": "Glidr Beta",
+    "image": "https://play-lh.googleusercontent.com/ovotLVYyLENOnOZJeXCbGVaxKhai79XuVJYiUpuL-CRDK9vOs0efiNi4TIqf_G1pSYkrKEcSa0h0s6PoND0S6g=w416-h235-rw",
+    "description": "A modern Android gallery app built with Jetpack Compose. Zoom, swipe, and explore your media with beautiful layouts like vertical, horizontal, and staggered grid. Includes an intuitive image viewer with file info and smooth navigation.",
+    "badges": [
+      "tech-compose",
+      "tech-kotlin",
+      "tech-stateflow",
+      "tech-coil",
+      "tech-navigation"
+    ],
+    "mainlink": "https://play.google.com/store/apps/details?id=com.pack.glidrbeta",
+    "links": [
+      {
+        "text": "View on Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.pack.glidrbeta",
+        "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "mkmp",
+    "title": "MKMP (E-Commerce)",
+    "image": "assets/mkmp.png",
+    "description": "A medium-scale e-commerce system, contributed in its development during my internship at <a href='https://www.amrisystems.com/' class='company-link' >Amri Systems</a>. Built with Django and optimized for performance, it includes advanced cart logic, exchange functionality, and real-time updates for both guest and authenticated users.",
+    "badges": [
+      "tech-python",
+      "tech-django",
+      "tech-html",
+      "tech-css",
+      "tech-js",
+      "tech-sql"
+    ],
+    "mainlink": "https://www.merakaammeripehchaan.com/",
+    "links": [
+      { 
+        "text": "View Live", 
+        "url": "https://www.merakaammeripehchaan.com/",
+        "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "spotify",
+    "title": "Spotify Clone",
+    "status": "wip",
+    "image": "assets/spotifyclone.png",
+    "description": "A fully-functional music streaming application inspired by Spotify, built to showcase scalable architecture, real-time streaming, and a modern Flutter UI.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-python",
+      "tech-fastapi",
+      "tech-hive",
+      "tech-fonts"
+    ],
+    "mainlink": "https://github.com/pdshah09/SpotifyClone",
+    "links": [
+      {
+        "text": "View on GitHub",
+        "url": "https://github.com/pdshah09/SpotifyClone",
+        "class": "link-secondary"
+      }
+    ]
+  },
+  {
+    "id": "todo",
+    "title": "TodoNest",
+    "status": "wip",
+    "image": "assets/todonest.png",
+    "description": "A modern, minimalistic task management app built with Flutter.TodoNest helps you stay organized, productive, and in control of your daily tasks with an elegant interface and seamless experience across Android and iOS.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-hive",
+      "tech-url_launcher",
+      "tech-fonts"
+    ],
+    "mainlink": "https://github.com/pdshah09/TodoNest",
+    "links": [
+      {
+        "text": "View on GitHub",
+        "url": "https://github.com/pdshah09/TodoNest",
+        "class": "link-secondary"
+      }
+    ]
+  }
+]

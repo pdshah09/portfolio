@@ -1,0 +1,588 @@
+/* ==========================================================================
+   Page Sections (Hero, About, Skills, Portfolio, Contact, Footer)
+   ========================================================================== */
+
+/* --- 1. HERO SECTION --- */
+.hero {
+    /* 1. Occupy full viewport height (dvh handles mobile browser bars better) */
+    background-image: url('../assets/banner1.png') !important;
+    
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* 3. Dynamic Padding (Controlled by JS in home.js) */
+    /* Defaults are provided in case JS fails */
+    padding-top: var(--hero-pad-top, 100px);
+    padding-bottom: var(--hero-pad-bottom, 80px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    /* 4. Background & Effects */
+    text-align: center;
+    background-size: 50px 50px;
+    /* background-image:
+        linear-gradient(to right, var(--hero-grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--hero-grid-color) 1px, transparent 1px); */
+    position: relative;
+    overflow: hidden;
+    background-color: var(--md-background);
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; 
+}
+
+/* Stacking Context for Hero */
+#home .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Profile Image & Border Animation */
+.profile-img-wrapper {
+    position: relative;
+    margin-top: 5rem;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile-img-wrapper::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 3px;
+    background: conic-gradient(from -60deg, #EA4335 0% 26%, #4285F4 26% 58%, #34A853 58% 84%, #FBBC05 84% 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: transform 1s linear, opacity 0.4s ease-in-out;
+}
+
+.profile-img-wrapper:hover::before {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--md-primary-container);
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    transition: border-color 0.4s ease-in-out;
+}
+
+.profile-img-wrapper:hover img {
+    border-color: transparent;
+}
+
+/* Hero Text & Buttons */
+.hero h1 {
+    font-size: 2.75rem;
+    color: var(--md-primary);
+    margin-bottom: 1rem;
+    min-height: 2em; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    /* color: var(--md-on-surface-variant); */
+    color: #FFFFFF;
+}
+
+.hero .extended-fab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 4px 8px var(--md-shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Ensure z-index is high enough if it overlaps anything */
+    position: relative; 
+    z-index: 10;
+}
+
+.hero .extended-fab:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--md-shadow-color);
+}
+
+/* Hero Specific Media Queries */
+@media (min-width: 1920px) {
+
+    .profile-img-wrapper,
+    .hero img {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* JS handles the padding logic now, so we just adjust font sizes */
+    .hero h1 {
+        font-size: 2.25rem;
+        min-height: 4em;
+    }
+}
+
+/* --- 2. ABOUT SECTION --- */
+#about {
+    background-color: var(--md-surface-variant);
+}
+
+.about-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--md-on-surface-variant);
+}
+
+/* --- 3. SKILLS SECTION --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--md-surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px var(--md-shadow-color);
+    border: 1px solid var(--md-outline);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px var(--md-shadow-color);
+}
+
+.skill-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-card img {
+    height: 24px;
+}
+
+.badge-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    width: fit-content;
+    outline: none;
+}
+
+.badge-wrapper img {
+    display: block;
+    border-radius: 6px;
+}
+
+.badge-wrapper::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0%;
+    margin-top: 2px;
+    margin-left: 4px;
+    background: var(--bar-color, #61DAFB);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+.badge-wrapper:hover::after {
+    width: calc((100% - 8px) * var(--fill, 0.8));
+}
+
+/* --- 4. PORTFOLIO SECTION --- */
+#portfolio {
+    background-color: var(--md-surface-variant);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    background-color: var(--md-surface);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--md-shadow-color);
+    border: 1px solid var(--md-outline);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px var(--md-shadow-color);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.portfolio-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+    color: var(--md-on-surface-variant);
+    margin-bottom: 1rem;
+}
+
+.portfolio-links {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-links a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.company-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: white;
+}
+
+.portfolio-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--md-shadow-color);
+}
+
+.portfolio-links .link-primary {
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+}
+
+.portfolio-links .link-secondary {
+    background-color: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
+
+.portfolio-links .link-secondary:hover {
+    filter: brightness(1.1);
+}
+
+.tech-badges {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tech-badges span {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.tech-badges span:hover {
+    transform: scale(1.05);
+}
+
+/* GitHub Card Specifics */
+.portfolio-item-more .portfolio-content {
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.portfolio-item-more h3 {
+    font-size: 2rem;
+    color: var(--md-primary);
+}
+
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.card-btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    font-family: inherit;
+}
+
+.btn-load {
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    box-shadow: 0 4px 6px var(--md-shadow-color);
+}
+
+.btn-github {
+    background-color: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+/* WIP Styles */
+.portfolio-item.is-wip {
+    border: 1px solid #ffb700 !important;
+    position: relative;
+}
+
+.portfolio-item.is-wip:hover {
+    box-shadow: 0 0 20px rgba(255, 183, 0, 0.4);
+}
+
+.wip-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffb700;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.portfolio-item.is-wip .img-wrapper::after {
+    content: "CURRENTLY IN DEVELOPMENT";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75) 20px, rgba(255, 183, 0, 0.75) 20px, rgba(255, 183, 0, 0.75) 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: red;
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-shadow: 2px 2px 0px #000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(2px);
+}
+
+.portfolio-item.is-wip:hover .img-wrapper::after {
+    opacity: 1;
+}
+
+/* --- 5. CONTACT SECTION --- */
+.contact-intro {
+    color: var(--md-on-surface-variant);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.contact-card {
+    background: var(--md-surface);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--md-outline);
+    text-decoration: none;
+    color: var(--md-on-surface);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 0 1 350px;
+    min-width: 280px;
+    width: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--md-primary);
+    box-shadow: 0 8px 16px var(--md-shadow-color);
+}
+
+.contact-card .icon-box {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--md-surface-variant);
+    border-radius: 50%;
+    color: var(--md-primary);
+    flex-shrink: 0;
+}
+
+.contact-card .info {
+    min-width: 0;
+    flex: 1;
+}
+
+.contact-card .info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--md-on-surface);
+}
+
+.contact-card .info p {
+    margin: 2px 0 0 0;
+    font-size: 0.9rem;
+    color: var(--md-on-surface-variant);
+    overflow-wrap: anywhere;
+}
+
+/* --- 6. TOAST NOTIFICATION --- */
+.toast-notification {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    text-align: center;
+    border-radius: 8px;
+    padding: 14px 20px;
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+
+.toast-notification.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background-color: var(--md-surface-variant);
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--md-on-surface-variant);
+    border-top: transparent;
+}
