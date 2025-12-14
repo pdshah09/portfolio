@@ -3,8 +3,14 @@
     "id": "yvb",
     "title": "YVB Catalog",
     "image": "https://play-lh.googleusercontent.com/358sYXSOZr_FkzZVmK_QZf3m8OLiQw9BDS7YEHFPnnvj1PIlzplMP3FxxVc1kPnME9Ql4me0Xrn76C0nBbjkAg=w416-h235-rw",
-    "description": "A client project built for Yogeshwar Vasan Bhandar, a kitchenware retail brand. Developed using Flutter, the app offers a fast, modern, and completely offline catalog browsing experience. Users can view products, add items to a wishlist, and navigate through categories — all stored locally with no login or internet dependency.",
-    "badges": ["tech-flutter", "tech-dart", "tech-riverpod", "tech-hive", "tech-material3"],
+    "description": "A client project built for Yogeshwar Vasan Bhandar, developed using Flutter-based offline catalog application for a kitchenware retail brand. Enables fast product browsing, category navigation, and wishlist management with local data storage, requiring no login or internet connection. Optimized for performance and smooth user experience.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-riverpod",
+      "tech-hive",
+      "tech-material3"
+    ],
     "mainlink": "https://play.google.com/store/apps/details?id=com.yvbcatalog.app",
     "links": [
       {
@@ -96,6 +102,27 @@
         "text": "View Live", 
         "url": "https://www.merakaammeripehchaan.com/",
         "class": "link-primary"
+      }
+    ]
+  },
+  {
+    "id": "remotesync",
+    "title": "RemoteSync",
+    "status": "wip",
+    "image": "https://raw.githubusercontent.com/pdshah09/RemoteSync/main/screenshots/features.png",
+    "description": "Built a cross-platform remote PC access solution using Flutter and FastAPI. Enables real-time PC control from mobile and desktop with secure, low-latency communication. Features a responsive UI, REST-based architecture, and inbuilt PC-side scripting for seamless APK connectivity.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-python",
+      "tech-fastapi"
+    ],
+    "mainlink": "https://github.com/pdshah09/RemoteSync",
+    "links": [
+      {
+        "text": "View on GitHub",
+        "url": "https://github.com/pdshah09/RemoteSync",
+        "class": "link-secondary"
       }
     ]
   },
