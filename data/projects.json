@@ -106,6 +106,28 @@
     ]
   },
   {
+    "id": "movie",
+    "title": "MovieApp",
+    "status": "wip",
+    "image": "assets/movie.png",
+    "description": "Movie App . Browse trending and popular movies, view detailed descriptions, cast information, and watch trailers—all presented with a clean, modern UI and high-quality movie posters inspired by Figma designs.",
+    "badges": [
+      "tech-flutter",
+      "tech-dart",
+      "tech-hive",
+      "tech-fonts",
+      "tech-riverpod"
+    ],
+    "mainlink": "https://github.com/pdshah09/MoviesApp",
+    "links": [
+      {
+        "text": "View on GitHub",
+        "url": "https://github.com/pdshah09/MoviesApp",
+        "class": "link-secondary"
+      }
+    ]
+  },
+  {
     "id": "remotesync",
     "title": "RemoteSync",
     "status": "wip",
